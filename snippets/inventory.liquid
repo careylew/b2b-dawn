@@ -9,18 +9,14 @@
     {% render 'inventory', product: product %}
 {% endcomment %}
 {%- liquid
-  if use_variant
     assign target = product.selected_or_first_available_variant
-  else
-    assign target = product
-  endif
-
-  assign inventory = target.inventory_quantity
+    assign inventory = target.inventory_quantity
 -%}
-
+{% if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" %}
 <div class="inventory
  {%- if available == false %} inventory--sold-out {% endif -%}">
     <div class="inventory__container">
         <span>Stock: {{ inventory }}</span>
     </div>
 </div>
+{% endif %}
