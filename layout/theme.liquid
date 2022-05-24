@@ -210,13 +210,13 @@
     }
     </script>
     {% if customer %} <!-- Check if the customer is logged in.-->
-      {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account'%}
+      {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'cart' and template.name != 'checkout' and template.directory != 'account'%}
       <script>
       window.location.replace( '/collections/chick-fil-a' );
       </script>
       {% elsif customer.tags contains 'lowes' %}
       <script>
-      window.location.replace( '/collections/lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout'  and template.name != 'account');
+      window.location.replace( '/collections/lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout'  and template.directory != 'account');
       </script>
       {% endif %}
     {% endif %}
