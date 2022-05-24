@@ -12,7 +12,7 @@
     assign target = product.selected_or_first_available_variant
     assign inventory = target.inventory_quantity
 -%}
-{% if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" %}
+{% if target.inventory_management == "shopify" and target.inventory_policy != "continue" %}
 <div class="inventory
  {%- if available == false %} inventory--sold-out {% endif -%}">
     <div class="inventory__container">
