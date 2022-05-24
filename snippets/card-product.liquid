@@ -17,6 +17,11 @@
 {% endcomment %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{% style %}
+a.full-unstyled-link {
+  pointer-events: none;
+}
+{% endstyle %}
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
