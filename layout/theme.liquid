@@ -223,7 +223,7 @@
             </script>
         {% endunless %}
       {% endif %}
-    {% else %}
+    {% elsif template.name != 'account' %}
     <script>
       window.location.replace( '/account' );
     </script>
