@@ -1,5 +1,17 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
+  	{% unless customer %}
+      {% if template contains 'customers' %}
+      	{% assign send_to_login = false %}
+      {% else %}
+      	{% assign send_to_login = true %}
+      {% endif %}
+    {% endunless %}
+  	{% if send_to_login and request.path != "/challenge" %}
+      <script>
+      window.location.replace( '/account/login' );
+    	</script>
+    {% endif %} 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
