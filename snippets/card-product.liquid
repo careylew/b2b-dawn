@@ -147,8 +147,9 @@ a.full-unstyled-link:active { text-decoration: none; }
                 <span class="visually-hidden">{{ card_product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
               </p>
             {%- endif -%}
-
+			{% comment %}
             {% render 'inventory', product: card_product, price_class: '' %}
+            {% endcomment %}
           </div>
         </div>
         {%- if show_quick_add -%}
@@ -260,7 +261,9 @@ a.full-unstyled-link:active { text-decoration: none; }
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
+            {% comment %}
             {% render 'inventory' %}
+            {% endcomment %}
           </div>
         </div>
       </div>
