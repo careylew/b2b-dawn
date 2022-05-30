@@ -214,11 +214,15 @@
       <script>
       window.location.replace( '/collections/chick-fil-a' );
       </script>
-      {% elsif customer.tags contains 'lowes' %}
+      {% elsif customer.tags contains 'lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout'  and template.name != 'account' and template.directory != 'customers' %}
       <script>
-      window.location.replace( '/collections/lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout'  and template.name != 'account' and template.directory != 'customers');
+      window.location.replace( '/collections/lowes' );
       </script>
       {% endif %}
+    {% else %}
+    <script>
+      window.location.replace( '/account' );
+    </script>
     {% endif %}
   </head>
 
