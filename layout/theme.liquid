@@ -14,13 +14,13 @@
     </script>
   {% endif %} 
 
-  {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'product' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers'%}
+  {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers'%}
   	{% unless product.tags contains 'chick-fil-a' %}
       <script>
         window.location.replace( '/collections/chick-fil-a' );
       </script>
   	{% endunless %}
-  {% elsif customer.tags contains 'lowes' and collection.handle != 'lowes' and template.name != 'product' and template.name != 'cart' and template.name != 'checkout'  and template.name != 'account' and template.directory != 'customers' %}
+  {% elsif customer.tags contains 'lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout'  and template.name != 'account' and template.directory != 'customers' %}
   	{% unless product.tags contains 'chick-fil-a' %}    
       <script>
         window.location.replace( '/collections/lowes' );
