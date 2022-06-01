@@ -26,6 +26,10 @@
         window.location.replace( '/collections/lowes' );
       </script>
   	{% endunless %}
+  {% else %}
+  <script>
+        window.location.replace( '/' );
+  </script>
   {% endif %}
   <head>{% include 'best-option-initializer' %}
 
