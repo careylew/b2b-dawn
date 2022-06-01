@@ -12,25 +12,26 @@
     <script>
       window.location.replace( '/account/login' );
     </script>
+  {% else %}
+    {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers'%}
+      {% unless product.tags contains 'chick-fil-a' %}
+        <script>
+          window.location.replace( '/collections/chick-fil-a' );
+        </script>
+      {% endunless %}
+    {% elsif customer.tags contains 'lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers' %}
+      {% unless product.tags contains 'lowes' %}    
+        <script>
+          window.location.replace( '/collections/lowes' );
+        </script>
+      {% endunless %}
+    {% elsif customer.tags == blank and template.name != 'index' %}
+    <script>
+          window.location.replace( '/' );
+    </script>
+    {% endif %}
   {% endif %} 
 
-  {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers'%}
-  	{% unless product.tags contains 'chick-fil-a' %}
-      <script>
-        window.location.replace( '/collections/chick-fil-a' );
-      </script>
-  	{% endunless %}
-  {% elsif customer.tags contains 'lowes' and collection.handle != 'lowes' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers' %}
-  	{% unless product.tags contains 'lowes' %}    
-      <script>
-        window.location.replace( '/collections/lowes' );
-      </script>
-  	{% endunless %}
-  {% elsif customer.tags == blank and template.name != 'index' %}
-  <script>
-        window.location.replace( '/' );
-  </script>
-  {% endif %}
   <head>{% include 'best-option-initializer' %}
 
     <meta charset="utf-8">
