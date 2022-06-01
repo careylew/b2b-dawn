@@ -2401,7 +2401,7 @@ menu-drawer + .header__search {
 }
 
 .header__search {
-  display: inline-flex;
+  display: none;
   line-height: 0;
 }
 
