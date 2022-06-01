@@ -12,7 +12,7 @@
     <script>
       window.location.replace( '/account/login' );
     </script>
-  {% else %}
+  {% elsif request.path != "/challenge" %}
     {% if customer.tags contains 'chick-fil-a' and collection.handle != 'chick-fil-a' and template.name != 'cart' and template.name != 'checkout' and template.name != 'account' and template.directory != 'customers'%}
       {% unless product.tags contains 'chick-fil-a' %}
         <script>
