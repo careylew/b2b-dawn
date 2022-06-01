@@ -26,7 +26,7 @@
         window.location.replace( '/collections/lowes' );
       </script>
   	{% endunless %}
-  {% elsif template.name != 'index' %}
+  {% elsif customer.tags == blank and template.name != 'index' %}
   <script>
         window.location.replace( '/' );
   </script>
